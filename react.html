@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="name"></div>
+    <div id="root"></div>
+    <div id="fromfun"></div>
+    <div id="tim"></div>
+    <div id="ex"></div>
+    <div id="Mul"></div>
+
+
+
+
+
+    <script type="text/babel">
+
+     const name='hari';
+     const element= <h1> Hello, {name}</h1>;
+    
+    const user={
+        firstname:"hari",
+        secondname:"krishnan"
+    };
+
+    function fullname(user){
+        return user.firstname+' '+user.secondname;
+    }
+
+    const full=(
+        <h1>
+            Hello,{fullname(user)}!
+            </h1>
+    );
+    
+    function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+
+function tick() {
+  const ele = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(ele, document.getElementById('tim'));
+}
+
+setInterval(tick, 1000);
+
+     ReactDOM.render(
+         element,
+         document.getElementById('name')
+     );      
+
+
+     ReactDOM.render(
+        <h1>Hello,world</h1>,
+        document.getElementById('root')
+     );
+
+
+     ReactDOM.render(
+         full,
+         document.getElementById('fromfun')
+     );
+
+     ReactDOM.render(
+  <Welcome name="aman1"/>,
+  document.getElementById('ex')
+);
+
+
+function Wel(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Wel name="Sara" />
+      <Wel name="Cahal" />
+      <Wel name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('Mul')
+);
+    </script>
+   
+  </body>
+</html>
